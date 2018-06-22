@@ -1,0 +1,9 @@
+ID
+ID, Name, Gender, Team
+Integer, String, String, String
+1, Stephen, Male, IC
+15, Pabu, Female, Bristol
+2, Alice, Female, GSW
+23, Green, Male, GSW
+50, Chenxi, Female, Bristol
+51, Curry, Male, GSW

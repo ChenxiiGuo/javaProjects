@@ -1,0 +1,6 @@
+ID
+ID, Name, Kind, Owner
+Integer, String, String, String
+1, Fido, dog, ab123
+2, Wanda, fish, ef789
+3, Garfield, cat, ab123

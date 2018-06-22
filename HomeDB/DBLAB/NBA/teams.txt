@@ -1,0 +1,7 @@
+Team
+Team, Address, Rank
+String, String, Integer
+Bristol, UK, 1
+GSW, US, 2
+IC, UK, 3
+

@@ -1,0 +1,9 @@
+ID
+ID, Salary, Team
+Integer, Integer, String
+50, 17795, Bristol
+51, 123923, GSW
+23, 2147483647, GSW
+1, 123, IC
+2, 1000, Bristol
+
