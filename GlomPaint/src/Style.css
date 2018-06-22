@@ -1,0 +1,89 @@
+.Button {
+    -fx-background-color: #3a3d3e;
+    -fx-text-fill: #bbb6aa;
+}
+
+.Cb .label {
+    -fx-background-color: #3a3d3e;
+    -fx-text-fill: #bbb6aa;
+}
+
+.Cb .menu-item:focused {
+    -fx-background-color: #2b2b2b;
+}
+
+.Cb .menu-item:focused .label {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #2b2b2b;
+}
+
+.Cb .context-menu  {
+    -fx-background-color: #3a3d3e;
+}
+
+
+.ColorPicker .arrow-button {
+    -fx-background-color: #3a3d3e;
+}
+
+.ColorPicker .combo-box-base  {
+    -fx-background-color: #3a3d3e;
+}
+
+.ControlPane {
+    -fx-background-color: #5d6062;
+}
+
+.PaintPane {
+    -fx-background-color: #2b2b2b;
+}
+
+.BoardBar {
+    -fx-background-color: #393c3e;
+}
+
+
+.scroll-pane {
+    -fx-background-color: #2b2b2b;
+    -fx-background: #212121;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb{
+    -fx-background-color: #575757;
+    -fx-background-radius: 5em;
+}
+
+.Gallery {
+    -fx-font: bold 16px 'cursive';
+    -fx-font-family: "Helvetica";
+    -fx-font-smoothing-type: lcd;
+    -fx-fill: #d6d5d5;
+}
+
+.PaneText {
+    -fx-font: bold 14px 'cursive';
+    -fx-font-family: "Helvetica";
+    -fx-font-smoothing-type: lcd;
+    -fx-fill: #000000;
+}
+
+.Text {
+    -fx-padding: 0;
+    -fx-background-color: #a6a6a6;
+    -fx-border-style: solid inside;
+    -fx-border-width: 2;
+    -fx-border-color: #1d1d1d;
+}
+
+.TextForArea {
+    -fx-font: bold 16px 'cursive';
+    -fx-font-family: "Helvetica";
+    -fx-font-smoothing-type: lcd;
+    -fx-fill: #d6d5d5;
+}
