@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Query {
     private String currentDir;
-    private Scanner scanner = new Scanner(System.in);;
+    private Scanner scanner = new Scanner(System.in);
     private PrintStream out = System.out;
     private List<String> readInput = new ArrayList<>();
     private String currentDBName = "none";
