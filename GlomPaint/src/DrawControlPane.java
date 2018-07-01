@@ -10,12 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.SnapshotParameters;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -98,6 +100,10 @@ public class DrawControlPane extends GridPane {
         Button clearAll = new Button("Clear All");
         setClearAll(clearAll, drawControl);
         this.add(clearAll, 1, 5, 2, 1);
+
+        Button white = new Button("White");
+        setWhite(white, drawControl);
+        this.add(white, 3, 5,2, 1);
 
 
         Text saveText = new Text("Save");
@@ -226,11 +232,38 @@ public class DrawControlPane extends GridPane {
             @Override
             public void handle(final ActionEvent e) {
                 GraphicsContext gc = drawControl.getMainCanvas().getGraphicsContext2D();
-                gc.clearRect(0,0, 850, 400);
+                gc.clearRect(0,0, 800, 450);
                 //for redo
                 drawControl.addToCanvasHistory(drawControl.getMainCanvas());
             }
         });
+    }
+
+    void setWhite(Button white, DrawControl drawControl) {
+        white.getStyleClass().add("Button");
+        white.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(final ActionEvent e) {
+                GraphicsContext gc = drawControl.getMainCanvas().getGraphicsContext2D();
+                Canvas canvas = drawControl.getMainCanvas();
+                SnapshotParameters parameters = new SnapshotParameters();
+                WritableImage image = canvas.snapshot(parameters,null);
+                PixelReader pixelReader = image.getPixelReader();
+                for (int i = 0; i < 800; i++) {
+                    for (int j = 0; j < 450; j++) {
+                        //System.out.println(pixelReader.getColor(i, j));
+                        if (pixelReader.getColor(i, j).
+                                equals(Color.rgb(255, 255, 255))) {
+                            gc.getPixelWriter().setColor(i, j, Color.rgb(255, 255, 255));
+                        }
+
+                    }
+                }
+
+                drawControl.addToCanvasHistory(drawControl.getMainCanvas());
+            }
+        });
+
     }
 
 
