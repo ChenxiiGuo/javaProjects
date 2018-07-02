@@ -9,7 +9,9 @@ import javafx.scene.layout.GridPane;
 
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ImageGrid extends GridPane{
 
@@ -34,30 +36,36 @@ public class ImageGrid extends GridPane{
         //mainImageView = new ImageView(image);
 
     }
-    public void addImages(List<String> imageUrlList) {
+
+    // 02/July changed
+    public void addImages(List<String> imageUrlList, DrawControl drawControl) {
+        //02/July add
+        Map<Image, String> imgListMap = new HashMap<Image, String>();
+
         for(int i = 0; imageUrlList != null && i < imageUrlList.size(); i ++) {
-            System.out.println(imageUrlList.get(i));
+            //System.out.println(imageUrlList.get(i));
             File imageFile = new File(imageUrlList.get(i));
             Image image = new Image(imageFile.toURI().toString());
             ImageView imageView = new ImageView(image);
             imageView.setFitWidth(imageWidth);
             imageView.setFitHeight(imageHeigh);
+            imgListMap.put(image, imageUrlList.get(i));
+
+            String imgUrl = imageUrlList.get(i);
 
             imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(final MouseEvent e) {
                     mainImageView= imageView;
+                    drawControl.setMainImgUrl(imgUrl);
                     //GalaryControl.mainImage = imageView;
                     galaryControl.setMainImageGrid(mainImageView.getImage());
-
-                    //System.out.println(mainImageView.toString());
+                    //System.out.println(imgUrl);
 
                 }
             });
-
             this.add(imageView, i, 0);
             //System.out.println(imageView.toString());
-
             //System.out.println(i);
         }
     }

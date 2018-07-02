@@ -32,6 +32,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -285,6 +286,7 @@ public class DrawControlPane extends GridPane {
                             for (File item : list) {
                                 if (item.getAbsolutePath().endsWith(".png")) {
                                     fileURL.add(item.getAbsolutePath());
+                                    //System.out.println(item.getAbsolutePath());
                                 }
 
                             }
@@ -302,7 +304,19 @@ public class DrawControlPane extends GridPane {
         save.setOnAction(e -> {
             WritableImage image = drawControl.getImage().
                     snapshot(new SnapshotParameters(), null);
-            File file = new File("quicksave.png");
+            String url = drawControl.getMainImgUrl();
+            //url = url.replaceAll("srcImage", "target");
+            List<String> urlStr = Arrays.asList(url.split("/"));
+            System.out.println(urlStr);
+
+            String folderUlr = "target/" + urlStr.get(urlStr.size() - 2);
+            File folder = new File(folderUlr);
+            if (!folder.exists()) folder.mkdir();
+            String newUrl = "target/" + urlStr.get(urlStr.size() - 2) +
+                    "/" + urlStr.get(urlStr.size() - 1);
+            System.out.println(newUrl);
+
+            File file = new File(newUrl);
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
             } catch (IOException error) {

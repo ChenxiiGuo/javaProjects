@@ -45,6 +45,11 @@ public class DrawControl {
     // number of pixels per mm^2
     private int ppm;
 
+    // imageList
+    private List<String> imageUrlList;
+
+    private String mainImgUrl;
+
 
 
     DrawControl(GalaryControl galaryControl) {
@@ -61,6 +66,8 @@ public class DrawControl {
         ppm = 1;
 
         imageGrid = new ImageGrid(galaryControl);
+
+        mainImgUrl = System.getProperty("user.dir");
 
 
         canvasHistory = new StatusHistory<>();
@@ -137,7 +144,8 @@ public class DrawControl {
 
     /*this is gallary*/
     public void addImageList(List<String> imageUrlList) {
-        imageGrid.addImages(imageUrlList);
+        this.imageUrlList = imageUrlList;
+        imageGrid.addImages(imageUrlList, this);
     }
 
     public ImageGrid getGallaryImages() {
@@ -190,6 +198,15 @@ public class DrawControl {
         return area;
     }
 
+    //02/july added
+
+    public void setMainImgUrl(String url) {
+        this.mainImgUrl = url;
+    }
+
+    public String getMainImgUrl() {
+        return mainImgUrl;
+    }
 
 
 
