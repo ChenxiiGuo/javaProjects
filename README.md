@@ -13,23 +13,30 @@ This software is used for my own project which needs to lable a lot of images.
 ### How to used it?
 Two methods, use GlomPaint.jar or compile it on your own(MainPanel.java is the main class).
 
+The example folder shows how to correctly use it. 
+Firstly, You should have a folder called Target to put labeled images and this folder must be with GlomPaint.jar.
+
+Secondly, The source image might be put with GlomPaint.jar. If you use this software to open the images in these folders. After
+you labeled the image, what you need to do is click "quick save". Then the labeled images will automatically be save the in 
+the target folder with the same folder name and the same file name.
+
 ### Features of this software.
 
 The pannel of this software is:
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/introduction.png)
 
 Firstly, you can open several images and put them in a gallery, so you can choose the image you want.
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/gallery.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/gallery.png)
 
 Secondly, you can draw whatever you want with different color and pen.
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/write.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/write.png)
 
 Thirdly, you can draw a closed line and fill it.
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/closedLine.png)
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/colored.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/closedLine.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/colored.png)
 
 Fourthly, you can use different size of erasers.
-![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/eraser.png)
+![image](https://github.com/ChenxiiGuo/javaProjects/blob/master/GlomPaint/introduction/eraser.png)
 
 You can also use redo/undo. However, to save memory, only 5 steps undo could be applied.
 
